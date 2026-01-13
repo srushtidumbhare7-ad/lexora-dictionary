@@ -1,34 +1,67 @@
-**WordWise** is a responsive and stylish dictionary web app built with HTML, CSS, and JavaScript. It lets users search for English words and provides their meanings, parts of speech, examples, and synonyms using the Free Dictionary API.
+# 📘 Lexora — Smart Dictionary Web App
+
+**Lexora** is an interactive and modern dictionary web application built using **HTML, CSS, and JavaScript**.  
+It allows users to search English words and view details like meanings, examples, audio pronunciation, synonyms, and parts of speech — powered by the Free Dictionary API.
+
+Lexora enhances the user experience with **dark mode**, **clickable synonyms**, **search history**, and **local storage** support.
 
 ---
 
 ## 🚀 Features
 
-- Real-time dictionary lookup
-- Displays meaning, part of speech, example, and synonyms
-- Error handling for unknown words and empty input
-- Loading spinner while fetching data
-- Smooth fade-in animation for results
-- Responsive design for all screen sizes
-- Clean UI with modern Google Fonts
+✔ Real-time dictionary lookup (Free Dictionary API)  
+✔ Displays:  
+- Meaning  
+- Part of Speech  
+- Example  
+- Synonyms *(clickable to re-search)*  
+- Audio pronunciation  
+
+✔ Dark / Light mode toggle  
+✔ Search history (stored in LocalStorage)  
+✔ Clear History button  
+✔ Press **Enter** to search  
+✔ Loading spinner for fetch requests  
+✔ Smooth fade-in animations  
+✔ Responsive UI across devices  
+✔ Clean modern UI with Google Fonts  
 
 ---
 
 ## 🌐 Live Demo
 
-[View the live site here](#)  
-*Replace `#` with your GitHub Pages link after deployment*
+🔗 **Live Page:** *(add after deployment)*
 
 ---
 
-## 🛠️ Tech Stack
+## 🖥 Tech Stack
 
-- HTML5  
-- CSS3 (with media queries and animations)  
-- JavaScript (ES6+, async/await)  
-- [Free Dictionary API](https://dictionaryapi.dev/)
+- **HTML5**
+- **CSS3** *(Animations + Dark Mode)*
+- **JavaScript (ES6+)**
+- **Free Dictionary API**
+
+---
+
+## 📸 Screenshots
+
+> Currently showing **Light + Dark Mode** (Mobile responsiveness will be added later)
+
+### 🔹 Light Mode (Search Result)
+![Light Mode Screenshot](screenshots/light-mode.png)
+
+### 🔹 Dark Mode (Search Result)
+![Dark Mode Screenshot](screenshots/dark-mode.png)
 
 ---
 
 ## 📁 Project Structure
-
+Lexora/
+├── index.html
+├── style3.css
+├── dictionary.js
+├── dictionary-bg.jpg
+├── screenshots/
+│ ├── light-mode.png
+│ └── dark-mode.png
+└── README.md
