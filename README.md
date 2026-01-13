@@ -51,6 +51,8 @@ Lexora enhances the user experience with **dark mode**, **clickable synonyms**, 
 ### 🔹 Dark Mode (Search Result)
 ![Dark Mode Screenshot](screenshots/dark.png)
 
+### 🔹 Mobile Responsiveness View
+![Mobile Responsive Screenshot](screenshots/mobileResponsiveness.jpeg)
 
 ---
 
