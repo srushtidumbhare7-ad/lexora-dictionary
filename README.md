@@ -45,13 +45,12 @@ Lexora enhances the user experience with **dark mode**, **clickable synonyms**, 
 
 ## 📸 Screenshots
 
-> Currently showing **Light + Dark Mode** (Mobile responsiveness will be added later)
-
 ### 🔹 Light Mode (Search Result)
-![Light Mode Screenshot](screenshots/light-mode.png)
+![Light Mode Screenshot](screenshots/light.png)
 
 ### 🔹 Dark Mode (Search Result)
-![Dark Mode Screenshot](screenshots/dark-mode.png)
+![Dark Mode Screenshot](screenshots/dark.png)
+
 
 ---
 
