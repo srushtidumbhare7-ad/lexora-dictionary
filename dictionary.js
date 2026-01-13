@@ -30,16 +30,26 @@ async function searchWord() {
             <strong>Part of Speech:</strong> ${meaning.partOfSpeech}<br>
             <strong>Definition:</strong> ${def.definition}<br>
             ${def.example ? `<strong>Example:</strong> "${def.example}"<br>` : ""}
-            ${def.synonyms?.length ? `<strong>Synonyms:</strong> ${def.synonyms.join(', ')}` : ""}
+            ${def.synonyms?.length
+              ? `<div><strong>Synonyms:</strong> ${def.synonyms.slice(0, 8).map(s => `<span class='syn' onclick="reSearch('${s}')">${s}</span>`).join(' ')}</div>`
+              : ""}
           </div>
         `;
       }).join("<hr>");
 
-     resultBox.innerHTML = `
-  <h2>Meaning of "<strong>${word}</strong>":</h2>
-  ${meanings}
-`;
+      const audioURL = data[0].phonetics?.find(p => p.audio)?.audio;
 
+      resultBox.innerHTML = `
+        <h2>Meaning of "<strong>${word}</strong>":</h2>
+        ${audioURL ? `<button onclick="new Audio('${audioURL}').play()">🔊 Play Audio</button><br><br>` : ""}
+        ${meanings}
+      `;
+
+      let history = JSON.parse(localStorage.getItem("history")) || [];
+      history.unshift(word);
+      history = [...new Set(history)].slice(0, 10);
+      localStorage.setItem("history", JSON.stringify(history));
+      displayHistory();
 
       resultBox.scrollIntoView({ behavior: "smooth" });
     }
@@ -50,3 +60,39 @@ async function searchWord() {
     console.error(error);
   }
 }
+
+document.getElementById("themeToggle").onclick = () => {
+  document.body.classList.toggle("dark");
+};
+
+document.getElementById("WordInput").addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    searchWord();
+  }
+});
+
+function displayHistory() {
+  const history = JSON.parse(localStorage.getItem("history")) || [];
+  const historyBox = document.getElementById("historyBox");
+  const clearBtn = document.getElementById("clearHistoryBtn");
+
+  historyBox.innerHTML = history
+    .map(h => `<span class="history-item" onclick="reSearch('${h}')">${h}</span>`)
+    .join(" ");
+
+  // show button only when history exists
+  clearBtn.classList.toggle("hidden", history.length === 0);
+}
+
+// clear history btn click
+document.getElementById("clearHistoryBtn").onclick = () => {
+  localStorage.removeItem("history");
+  displayHistory();
+};
+
+function reSearch(w) {
+  document.getElementById("WordInput").value = w;
+  searchWord();
+}
+
+displayHistory();
