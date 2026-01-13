@@ -30,7 +30,7 @@ Lexora enhances the user experience with **dark mode**, **clickable synonyms**, 
 
 ## 🌐 Live Demo
 
-🔗 **Live Page:** *(add after deployment)*
+🔗 (https://srushtidumbhare7-ad.github.io/lexora-dictionary/)
 
 ---
 
