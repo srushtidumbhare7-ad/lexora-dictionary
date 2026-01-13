@@ -1,0 +1,239 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #b2bcc2 url('dictionary bg.jpg') no-repeat center center/cover;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.search-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.search-box input {
+    padding: 10px;
+    font-size: 16px;
+    width: 250px;
+    max-width: 100%;
+}
+
+.search-box button {
+    padding: 10px 20px;
+    background: rgb(160, 170, 170);
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.search-box button:hover {
+    background-color: rgb(140, 150, 150);
+    color: black;
+}
+
+.result-container {
+    width: 100%;
+    max-width: 600px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    line-height: 1.6;
+    padding: 20px;
+    margin-top: 30px;
+    text-align: left;
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+.hidden {
+    display: none;
+}
+
+.spinner {
+    margin-top: 20px;
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #333;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 500px) {
+
+    .container,
+    .result-container {
+        padding: 15px;
+    }
+
+    .search-box input {
+        width: 100%;
+    }
+
+    .search-box {
+        flex-direction: column;
+    }
+}
+
+/* ---- DARK MODE THEME ---- */
+.dark {
+    --bg: #2b2f36;
+    --card: #3a3f47;
+    --text: #f0f0f0;
+}
+
+/* Background & Text */
+body.dark {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url('dictionary bg.jpg') no-repeat center/cover;
+    color: var(--text);
+}
+
+/* Containers */
+body.dark .container,
+body.dark .result-container {
+    background: var(--card);
+    color: var(--text);
+}
+
+/* Buttons */
+body.dark .search-box button,
+body.dark button {
+    background-color: #4a4f58 !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 6px;
+}
+
+body.dark .search-box button:hover,
+body.dark button:hover {
+    background-color: #5a606b !important;
+}
+
+/* Input Fix */
+body.dark input {
+    background-color: #4a4f58;
+    color: #ffffff;
+    border: 1px solid #666;
+}
+
+/* Theme toggle button circle style */
+.theme-btn {
+    border-radius: 50%;
+    margin-left: 4px;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+}
+
+body.dark .theme-btn {
+    background-color: #2e3340 !important;
+}
+
+body.dark .history-item {
+  background: #4a4f58;
+  color: #fff;
+  border: 1px solid #666;
+  border-radius: 8px;
+}
+body.dark .history-item:hover {
+  background: #5a606b;
+}
+
+body.dark .history-clear {
+  background: #4a4f58 !important;
+  color: white !important;
+}
+
+body.dark .history-clear:hover {
+  background: #5a606b !important;
+}
+
+/*History*/
+#historyBox {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.history-item {
+    background: #eee;
+    padding: 5px 8px;
+    margin: 4px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.history-item:hover {
+    background: #ddd;
+}
+
+.history-clear {
+  margin-top: 8px;
+  padding: 6px 12px;
+  font-size: 14px;
+  border-radius: 6px;
+  background: rgb(160, 170, 170);
+  cursor: pointer;
+  border: none;
+}
+
+.history-clear:hover {
+  background: rgb(140, 150, 150);
+}
+
+
+.syn {
+    background: #d3e5ff;
+    padding: 4px 6px;
+    margin: 2px;
+    display: inline-block;
+    border-radius: 6px;
+    font-size: 14px;
+}
+.syn:hover {
+  cursor: pointer;
+  opacity: 0.85;
+}
