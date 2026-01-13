@@ -4,18 +4,25 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WordWise Dictionary</title>
+    <title>Lexora Dictionary</title>
     <link rel="stylesheet" href="style3.css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
 </head>
 
 <body>
     <div class="container">
-        <h1>WordWise</h1>
+        <h1>Lexora</h1>
         <div class="search-box">
+
             <input type="text" id="WordInput" placeholder="Enter a word..." />
             <button onclick="searchWord()">Search</button>
+            <button id="themeToggle" class="theme-btn">🌙</button>
+            <div id="historyBox"></div>
+            <button id="clearHistoryBtn" class="history-clear hidden">Clear History</button>
+
+
         </div>
+
     </div>
 
 
